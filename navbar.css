@@ -1,0 +1,81 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+nav{
+    display: flex; /* for flexible responsive layout structure to make the elements side by side */
+    justify-content: space-around; /* elements are positioned with space before,between and after the lines */
+    align-items: center; /* aligns elements at the centre*/
+    min-height: 8vh;
+    font-family: 'EB Garamond', serif;
+    background-color: #333;
+}
+.My-name{
+    color: rgb(226,226,226);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 15px;
+}
+.menu-links ul{
+    display: flex;
+    justify-content: space-around;
+    width: 30%;
+    list-style: none;
+}
+
+.menu-links a{
+    color: rgb(226,226,226);
+    text-decoration: none;
+    letter-spacing: 2px;
+    font-weight: bold;
+    font-size: 14px;
+    padding: 1rem;
+    display: block;
+}
+.menu-links li:hover{
+    background-color: #555;
+}
+.toggle-button{
+    position: absolute; /* to the right*/
+    top: .75rem; /* from the top of the screen distance and distance from the right*/
+    right: 1rem;
+    display: flex;
+    flex-direction: column; /* so that all spans should land on one another */
+    justify-content: space-between;
+    height: 21px;
+    width: 30px;
+}
+.toggle-button .bar{
+    height: 3px;
+    width: 100%;
+    background-color: white;
+    border-radius: 10px;
+}
+
+@media (max-width:1024px){ /* executes the code inside if the it satisfies the condition here the screen width */
+    .toggle-button{
+        display: flex;
+    }
+    .menu-links{
+        display: none;
+        width: 100%;
+    }
+    .navbar{
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .menu-links ul{
+        width: 100%;
+        flex-direction: column;
+    }
+    .menu-links li{
+        text-align: center;
+    }
+    .menu-links li a{
+        padding: .5rem 1rem;
+    }
+    .menu-links.active{
+        display: flex;
+    }
+}
